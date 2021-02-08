@@ -16,14 +16,14 @@ jobs:
         trigger: true
       - set_pipeline: set-pipelines
         file: concourse-examples/pipelines/set-pipelines.yml
-  # - name: set-example-pipelines
-  #   public: true
-  #   plan:
-  #     - get: concourse-examples
-  #       trigger: true
-  #       passed: [set-self]
-  #     - set_pipeline: job
-  #       file: concourse-examples/pipelines/hello-world.yml
+  - name: set-example-pipelines
+    public: true
+    plan:
+      - get: concourse-examples
+        trigger: true
+        passed: [set-self]
+      - set_pipeline: job
+        file: concourse-examples/pipelines/hello-world.yml
   #     - set_pipeline: separate-task-config
   #       file: concourse-examples/pipelines/separate-task-config.yml
   #     - set_pipeline: serial-job
