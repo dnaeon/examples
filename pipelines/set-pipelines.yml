@@ -24,6 +24,8 @@ jobs:
         passed: [set-self]
       - set_pipeline: hello-world-((hello))
         file: concourse-examples/pipelines/hello-world.yml
+        var_files:
+          - concourse-examples/pipelines/vars.yml
   #     - set_pipeline: separate-task-config
   #       file: concourse-examples/pipelines/separate-task-config.yml
   #     - set_pipeline: serial-job
