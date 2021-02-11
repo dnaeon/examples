@@ -11,5 +11,6 @@ jobs:
   - name: job
     public: true
     plan:
+      - get: concourse-examples
       - task: simple-task
         file: concourse-pipelines/pipelines/simple_task.yml
