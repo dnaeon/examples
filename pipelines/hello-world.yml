@@ -14,3 +14,5 @@ jobs:
       - get: concourse-examples
       - task: simple-task
         file: concourse-pipelines/pipelines/simple_task.yml
+        params:
+          MY_PARAM: ((number))
