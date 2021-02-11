@@ -1,4 +1,4 @@
 ---
 first: initial
-number: "9000"
+number: ((my_var))
 hello: HAL
