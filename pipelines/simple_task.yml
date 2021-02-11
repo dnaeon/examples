@@ -1,0 +1,13 @@
+---
+platform: linux
+
+params:
+  MY_PARAM:
+
+run:
+  path: /bin/sh
+  args:
+    - -c
+    - |
+      set -e
+      echo "Param is ${MY_PARAM}"

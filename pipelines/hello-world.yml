@@ -1,14 +1,15 @@
 ---
+resources:
+  - name: concourse-examples
+    type: git
+    icon: github
+    source:
+      uri: https://github.com/dnaeon/examples
+      branch: feat/parent-pipeline
+
 jobs:
   - name: job
     public: true
     plan:
       - task: simple-task
-        config:
-          platform: linux
-          image_resource:
-            type: registry-image
-            source: { repository: busybox }
-          run:
-            path: echo
-            args: ["Hello, world! ((number))..!"]
+        file: concourse-pipelines/pipelines/simple_task.yml
