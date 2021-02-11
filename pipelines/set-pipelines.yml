@@ -22,7 +22,7 @@ jobs:
       - get: concourse-examples
         trigger: true
         passed: [set-self]
-      - set_pipeline: hello-world-((hello))
+      - set_pipeline: hello-world
         file: concourse-examples/pipelines/hello-world.yml
         var_files:
           - concourse-examples/pipelines/vars.yml
